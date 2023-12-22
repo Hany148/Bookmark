@@ -52,7 +52,7 @@ function displayData() {
 
           <td>
               <a target="_blank" href="https://www.${inputList[i].siteUrl}">
-              <button class="btn for-visit">
+              <button class="btn for-visit fw-bold">
                 <i class="fa-solid fa-eye pe-1"></i>
                 Visit
               </button>
@@ -62,7 +62,7 @@ function displayData() {
 
           <td>
 
-          <button onclick="deleteItem(${i})" class="btn for-delete">
+          <button onclick="deleteItem(${i})" class="btn for-delete fw-bold">
            <i class="fa-solid fa-trash-can"></i>
            Delete
           </button>
