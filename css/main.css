@@ -79,8 +79,22 @@ label
     border: 1px solid #a03315 !important;
 } 
 
-
 .for-delete
+{
+    color: white ;
+    background-color: #eb1d36;
+    border: 1px solid #eb1d36 !important;
+    transition: 0.5s color , 0.5s background-color , 0.5s border;
+}
+
+.for-delete:hover
+{
+    color: white ;
+    background-color: #d30820;
+    border: 1px solid #ba081d !important;
+}
+
+.for-visit
 {
     color: white ;
     background-color: #9eb23b;
@@ -88,7 +102,7 @@ label
     transition: 0.5s color , 0.5s background-color , 0.5s border;
 }
 
-.for-delete:hover
+.for-visit:hover
 {
     color: white ;
     background-color: #8a9e23;
