@@ -4,11 +4,12 @@ var input_1 = document.getElementById("input-1");
 
 var input_2 = document.getElementById("input-2");
 
+var btnAdd = document.getElementById("btnAdd");
+
 var inputList = [];
 
-if (localStorage.getItem("bookMarks") != null)
-{
-    inputList = JSON.parse( localStorage.getItem("bookMarks") ) ;
+if (localStorage.getItem("bookMarks") != null) {
+    inputList = JSON.parse(localStorage.getItem("bookMarks"));
 
     displayData();
 }
@@ -17,24 +18,39 @@ if (localStorage.getItem("bookMarks") != null)
 
 function addValue() {
 
-    var bookMark = {
-        siteName: input_1.value,
-        siteUrl: input_2.value
-    };
+    if (validationName() && validationURL()) {
 
-    inputList.push(bookMark);
+        var bookMark = {
+            siteName: input_1.value,
+            siteUrl: input_2.value
+        };
 
-    localStorage.setItem("bookMarks" , JSON.stringify(inputList))
+        inputList.push(bookMark);
 
-    clearInput();
+        localStorage.setItem("bookMarks", JSON.stringify(inputList))
 
-    displayData();
+        clearInput();
+
+        displayData();
+
+    }
+
+
 
 }
+
+
 
 function clearInput() {
     input_1.value = "";
     input_2.value = "";
+    input_1.classList.remove("is-valid")
+    input_1.classList.remove("is-invalid")
+    input_2.classList.remove("is-valid")
+    input_2.classList.remove("is-invalid")
+    btnAdd.setAttribute("data-bs-toggle", "modal")
+    btnAdd.setAttribute("data-bs-target", "#exampleModal")
+
 }
 
 
@@ -80,8 +96,63 @@ function displayData() {
 
 function deleteItem(index) {
     inputList.splice(index, 1);
-    localStorage.setItem("bookMarks" , JSON.stringify(inputList))
+    localStorage.setItem("bookMarks", JSON.stringify(inputList))
     displayData();
 }
+
+function validationName() {
+    var text = input_1.value;
+    var regex = /^[A-Z]{3,}$/i
+
+    if (regex.test(text)) {
+        input_1.classList.add("is-valid");
+        input_1.classList.remove("is-invalid");
+
+        if (validationURL()) {
+            btnAdd.removeAttribute("data-bs-toggle");
+            btnAdd.removeAttribute("data-bs-target");
+        }
+        
+        return true;
+    }
+    else {
+        input_1.classList.add("is-invalid");
+        input_1.classList.remove("is-valid");
+        btnAdd.setAttribute("data-bs-toggle", "modal");
+        btnAdd.setAttribute("data-bs-target", "#exampleModal");
+        return false;
+    }
+}
+
+
+function validationURL() {
+    var text = input_2.value;
+    var regex = /^[A-Z]{3,}(.com)$/i
+
+    if (regex.test(text)) {
+        input_2.classList.add("is-valid")
+        input_2.classList.remove("is-invalid");
+
+        btnAdd.removeAttribute("data-bs-toggle");
+        btnAdd.removeAttribute("data-bs-target");
+
+        return true;
+
+    }
+    else {
+        input_2.classList.add("is-invalid");
+        input_2.classList.remove("is-valid")
+        btnAdd.setAttribute("data-bs-toggle", "modal")
+        btnAdd.setAttribute("data-bs-target", "#exampleModal")
+        return false;
+    }
+
+}
+
+
+
+
+
+
 
 

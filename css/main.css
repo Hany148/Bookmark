@@ -1,6 +1,7 @@
 *
 {
     text-decoration: none !important;
+    list-style: none !important;
 }
 .form-control:focus {
     color: var(--bs-body-color);
@@ -42,13 +43,13 @@ div h1:hover::after
     height: 50%;
 }
 
-div h2 
+div .h2 
 {
     font-family: "Righteous", cursive;
     font-size: 25px;
     background-image: linear-gradient(to right, #3ca55c, #b5ac49);
     background-clip: text;
-    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 .my-border
@@ -112,4 +113,67 @@ label
 .for-delete a
 {
     color: white;
+}
+
+
+.modal-header
+{
+    border-bottom:none !important;
+}
+
+.my-btn
+{
+    opacity: 1;
+    --bs-btn-close-focus-shadow: 0;
+}
+
+.my-btn:hover
+{
+    opacity: 1;
+}
+
+
+.the-circles span
+{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.span-1
+{
+    background-color: #f15f5d;
+}
+
+.span-2
+{
+    background-color: #febe2e;
+}
+
+.span-3
+{
+    background-color: #4db748;
+}
+
+div h2 
+{
+    font-family: "Bree Serif", serif;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+li i
+{
+    color: #bb4120;
+}
+
+li
+{
+    font-size: 18px;
+}
+
+
+.cneter
+{
+    top: 50% !important;
+    transform: translateY(-50%) !important;
 }

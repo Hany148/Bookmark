@@ -40,7 +40,7 @@
 
       <div class="container my-border py-4">
 
-        <h2 class="text-center ">
+        <h2 class="text-center h2">
           <i class="fa-solid fa-bookmark"></i>
           Bookmark your favorite sites
           <i class="fa-solid fa-bookmark"></i>
@@ -49,17 +49,19 @@
         <div class="input-1 pt-4">
           <i class="fa-solid fa-book-bookmark pe-2"></i>
           <label class="mb-1" for="input-1">Site Name</label>
-          <input id="input-1" class="form-control" placeholder="Bookmark Name" type="text" />
+          <input oninput="validationName()" id="input-1" class="form-control" placeholder="Bookmark Name" type="text" />
         </div>
 
         <div class="input-2 pt-4">
           <i class="fa-solid fa-link pe-2"></i>
           <label class="mb-1" for="input-1">Site URL</label>
-          <input id="input-2" class="form-control" placeholder="Website URL (such as facebook.com)" type="text" />
+          <input oninput="validationURL()" id="input-2" class="form-control" placeholder="Website URL (such as facebook.com)" type="text" />
         </div>
 
         <div class="text-center pt-4">
-          <button onclick="addValue ()" class="btn submit px-5">Submit</button>
+          <button onclick="addValue()" id="btnAdd"  class="btn submit px-5" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+            Submit
+          </button>
         </div>
 
 
@@ -106,6 +108,50 @@
 
 
 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog cneter">
+    <div class="modal-content">
+      <div class="modal-header pt-5">
+
+        <div class="the-circles d-flex">
+
+          <span class="rounded-circle span-1 me-2"></span>
+          <span class="rounded-circle span-2 me-2"></span>
+          <span class="rounded-circle span-3 me-2"></span>
+
+        </div>
+        
+        <button type="button" class="btn-close my-btn fw-bolder" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
+
+      <div class="modal-body">
+        <h2 class="mb-3" >Site Name or Url is not valid, Please follow the rules below :</h2>
+        <ul class="p-0">
+          <li class="mb-2">
+            <i class="fa-regular fa-circle-right p-2"></i>
+            <span>Site name must contain at least 3 characters</span>
+          </li>
+
+          <li>
+            <i class="fa-regular fa-circle-right p-2"></i>
+            <span>Site URL must be a valid one</span>
+          </li>
+
+        </ul>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+   <!-- bootstrap js -->
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <!-- my js -->
   <script src="main.js"></script>
 </body>
 
