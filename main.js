@@ -100,15 +100,16 @@ function deleteItem(index) {
     displayData();
 }
 
-function validationName() {
-    var text = input_1.value;
-    var regex = /^[A-Z]{3,}$/i
 
-    if (regex.test(text)) {
+function validationName() {
+    var textName = input_1.value;
+    var regexname = /^[A-Z]{3,}$/i
+
+    if (regexname.test(textName)) {
         input_1.classList.add("is-valid");
         input_1.classList.remove("is-invalid");
 
-        if (validationURL()) {
+        if (chick()) {
             btnAdd.removeAttribute("data-bs-toggle");
             btnAdd.removeAttribute("data-bs-target");
         }
@@ -126,15 +127,17 @@ function validationName() {
 
 
 function validationURL() {
-    var text = input_2.value;
-    var regex = /^[A-Z]{3,}(.com)$/i
+    var textUrl = input_2.value;
+    var regexUrl = /^[A-Z]{3,}(.com)$/i
 
-    if (regex.test(text)) {
+    if (regexUrl.test(textUrl)) {
         input_2.classList.add("is-valid")
         input_2.classList.remove("is-invalid");
 
-        btnAdd.removeAttribute("data-bs-toggle");
-        btnAdd.removeAttribute("data-bs-target");
+        if (chick()) {
+            btnAdd.removeAttribute("data-bs-toggle");
+            btnAdd.removeAttribute("data-bs-target");
+        }
 
         return true;
 
@@ -150,7 +153,21 @@ function validationURL() {
 }
 
 
+function chick () {
+    var textName = input_1.value;
+    var regexname = /^[A-Z]{3,}$/i
 
+    var textUrl = input_2.value;
+    var regexUrl = /^[A-Z]{3,}(.com)$/i
+
+    if (regexname.test(textName) && regexUrl.test(textUrl))
+    {
+        btnAdd.removeAttribute("data-bs-toggle");
+        btnAdd.removeAttribute("data-bs-target");
+        return true;
+    }
+    return false;
+}
 
 
 
