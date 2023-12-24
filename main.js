@@ -109,10 +109,7 @@ function validationName() {
         input_1.classList.add("is-valid");
         input_1.classList.remove("is-invalid");
 
-        if (chick()) {
-            btnAdd.removeAttribute("data-bs-toggle");
-            btnAdd.removeAttribute("data-bs-target");
-        }
+        chick()
         
         return true;
     }
@@ -134,10 +131,7 @@ function validationURL() {
         input_2.classList.add("is-valid")
         input_2.classList.remove("is-invalid");
 
-        if (chick()) {
-            btnAdd.removeAttribute("data-bs-toggle");
-            btnAdd.removeAttribute("data-bs-target");
-        }
+        chick();
 
         return true;
 
