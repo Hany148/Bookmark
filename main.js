@@ -67,7 +67,7 @@ function displayData() {
           <td>${str2}</td>
 
           <td>
-              <a target="_blank" href="https://www.${inputList[i].siteUrl}">
+              <a target="_blank" href="${inputList[i].siteUrl}">
               <button class="btn for-visit fw-bold">
                 <i class="fa-solid fa-eye pe-1"></i>
                 Visit
@@ -125,8 +125,7 @@ function validationName() {
 
 function validationURL() {
     var textUrl = input_2.value;
-    var regexUrl = /^[A-Z]{3,}(.com)$/i
-
+    var regexUrl = /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/i
     if (regexUrl.test(textUrl)) {
         input_2.classList.add("is-valid")
         input_2.classList.remove("is-invalid");
@@ -152,7 +151,7 @@ function chick () {
     var regexname = /^[A-Z]{3,}$/i
 
     var textUrl = input_2.value;
-    var regexUrl = /^[A-Z]{3,}(.com)$/i
+    var regexUrl = /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/i
 
     if (regexname.test(textName) && regexUrl.test(textUrl))
     {
